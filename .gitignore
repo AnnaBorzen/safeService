@@ -1,0 +1,11 @@
+.idea/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+.env
+
+go.work
+go.work.sum
+*.db

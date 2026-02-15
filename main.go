@@ -37,7 +37,7 @@ func main() {
 	log.Printf("📝 Register: POST http://localhost:%s/register", port)
 	log.Printf("🔐 Login: POST http://localhost:%s/login", port)
 	log.Printf("👤 Profile: GET http://localhost:%s/profile (requires token)", port)
-	log.Printf("❤️  Health: GET http://localhost:%s/health", port)
+	log.Printf("❤️ Health: GET http://localhost:%s/health", port)
 
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
