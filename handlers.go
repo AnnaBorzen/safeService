@@ -94,8 +94,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	errCheck := CheckPassword(loginRequest.Password, user.PasswordHash)
-	if errCheck {
+	if !CheckPassword(loginRequest.Password, user.PasswordHash) {
 		sendErrorResponse(w, "Invalid email or password", http.StatusUnauthorized)
 		return
 	}

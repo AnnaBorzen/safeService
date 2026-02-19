@@ -28,16 +28,12 @@ func HashPassword(password string) (string, error) {
 
 // CheckPassword проверяет пароль против хеша
 func CheckPassword(password, hash string) bool {
-	// TODO: Реализуйте проверку пароля
-	//
-	// Что нужно сделать:
-	// 1. Используйте bcrypt.CompareHashAndPassword()
-	// 2. Передайте []byte(hash) и []byte(password)
-	// 3. Верните true если ошибки нет, false если есть
-	//
-	// Документация: https://pkg.go.dev/golang.org/x/crypto/bcrypt#CompareHashAndPassword
+	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
+	if err != nil {
+		return false
+	}
 
-	return false // Временная заглушка
+	return true
 }
 
 // GenerateToken создает JWT токен для пользователя
